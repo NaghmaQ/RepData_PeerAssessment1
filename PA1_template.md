@@ -100,7 +100,7 @@ library(ggplot2)
 g1 <- ggplot(totalSteps, aes(Steps))
 g1 + geom_histogram(colour = "blue", fill = "light blue", bins = 30) + 
   labs(title = "Fig.1 Histogram of Total Steps") + 
-  labs(x = "Steps Taken Everyday", y = "Frequency (No. of Days)")
+  labs(x = "Steps Taken Everyday", y = "Frequency (No. of Days)") + theme_bw()
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
@@ -156,7 +156,7 @@ Let's now take a look at how the average daily activity pattern appears. A time-
 g2 <- ggplot(averagesteps, aes(x = Interval, y = Average_Steps))
 g2 + geom_line(color = "blue", size = 1.2) + 
   labs(title = "Fig.2 Average Daily Activity Pattern", x = "Interval", 
-       y = "Average number of steps taken")
+       y = "Average number of steps taken") + theme_bw()
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
@@ -236,8 +236,8 @@ Let's create a histogram of the total number of steps taken per day.
 ```r
 g3 <- ggplot(totalStepsNew, aes(Steps))
 g3 + geom_histogram(colour = "blue", fill = "light blue", bins = 30) + 
-  labs(title = "Fig.3 Histogram of Total Steps") + labs(x = "Steps Taken Everyday", 
-                                                  y = "Frequency (No. of Days)")
+  labs(title = "Fig.3 Histogram of Total Steps")  + theme_bw() + 
+  labs(x = "Steps Taken Everyday", y = "Frequency (No. of Days)")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
@@ -320,7 +320,7 @@ Lets now compare the results between weekdays and weekend through the following 
 g4 <- ggplot(avgSteps_copydataset, aes(x = Interval, y = Steps))
 g4 + geom_line(color = "blue", size = 1.2) + facet_grid(Day_type~.) + 
   labs(title = "Fig.4 Daily Activity Pattern across Weekdays and Weekend", 
-       x = "Interval", y = "Average number of steps taken")
+       x = "Interval", y = "Average number of steps taken") + theme_bw()
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
