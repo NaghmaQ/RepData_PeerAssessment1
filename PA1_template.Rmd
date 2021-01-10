@@ -53,7 +53,7 @@ library(ggplot2)
 g1 <- ggplot(totalSteps, aes(Steps))
 g1 + geom_histogram(colour = "blue", fill = "light blue", bins = 30) + 
   labs(title = "Fig.1 Histogram of Total Steps") + 
-  labs(x = "Steps Taken Everyday", y = "Frequency (No. of Days)")
+  labs(x = "Steps Taken Everyday", y = "Frequency (No. of Days)") + theme_bw()
 ```
 
 Calculating mean and median of the total steps taken per day:
@@ -83,7 +83,7 @@ Let's now take a look at how the average daily activity pattern appears. A time-
 g2 <- ggplot(averagesteps, aes(x = Interval, y = Average_Steps))
 g2 + geom_line(color = "blue", size = 1.2) + 
   labs(title = "Fig.2 Average Daily Activity Pattern", x = "Interval", 
-       y = "Average number of steps taken")
+       y = "Average number of steps taken") + theme_bw()
 ```
 
 First look at the plot clearly shows that there have been no activity during the interval range between 0 to about 500. This can be attributed to the missing values in the initial few rows. The second clear observation is the spike in the number of steps taken somewhere in the interval range from 750 to 900. Nowhere else in the plot is such a spike seen. We can find the exact 5-minute interval during which the maximum steps have been taken.
@@ -143,8 +143,8 @@ Let's create a histogram of the total number of steps taken per day.
 ```{r}
 g3 <- ggplot(totalStepsNew, aes(Steps))
 g3 + geom_histogram(colour = "blue", fill = "light blue", bins = 30) + 
-  labs(title = "Fig.3 Histogram of Total Steps") + labs(x = "Steps Taken Everyday", 
-                                                  y = "Frequency (No. of Days)")
+  labs(title = "Fig.3 Histogram of Total Steps")  + theme_bw() + 
+  labs(x = "Steps Taken Everyday", y = "Frequency (No. of Days)")
 ```
 
 Calculating new mean and median and comparing them with previous calculations:
@@ -196,7 +196,7 @@ Lets now compare the results between weekdays and weekend through the following 
 g4 <- ggplot(avgSteps_copydataset, aes(x = Interval, y = Steps))
 g4 + geom_line(color = "blue", size = 1.2) + facet_grid(Day_type~.) + 
   labs(title = "Fig.4 Daily Activity Pattern across Weekdays and Weekend", 
-       x = "Interval", y = "Average number of steps taken")
+       x = "Interval", y = "Average number of steps taken") + theme_bw()
 ```
 
 The first observed pattern that we saw in the previous such plot (Fig. 2) about the spike in the daily activity at the interval of `r maxInterval` is seen here only in the Weekday panel plot and disappears in the Weekend panel plot. Secondly, we see some increase in the daily weekend activity across remaining 5-minute intervals as compared to daily weekday activity. 
